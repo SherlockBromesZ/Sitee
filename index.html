@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Condomel - Ribeirão Pires: Preservando Abelhas, Cultivando Futuro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">Projeto Condomel</a>
+            <ul class="navbar-menu">
+                <li><a href="sobre.html">Sobre o Projeto</a></li>
+                <li><a href="condomeis.html">Condomeis</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+            </ul>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Projeto Condomel</h1>
+        <p>Preservando Abelhas, Cultivando Futuro em Ribeirão Pires</p>
+    </header>
+    <main>
+        <section class="hero fade-in">
+            <h2><i class="fas fa-bee icon"></i>Abelhas da Mata: Guardiãs da Biodiversidade</h2>
+            <p>Ribeirão Pires se destaca como pioneira em ações ambientais inovadoras, com a instalação de 13 novos pontos do projeto "Condomel – Abelhas da Mata" em locais estratégicos da região durante este ano. Esta iniciativa não apenas protege nossas preciosas abelhas, mas também fortalece o ecossistema local, promovendo a polinização e garantindo a continuidade de diversas espécies vegetais.</p>
+            <p class="quote">"Se as abelhas desaparecerem da face da Terra, a humanidade terá apenas mais quatro anos de existência." - Albert Einstein</p>
+        </section>
+        
+        <h3 class="section-title fade-in">Pilares do Projeto</h3>
+        
+        <div class="content-grid">
+            <div class="card fade-in">
+                <h3><i class="fas fa-info-circle icon"></i>Sobre o Projeto</h3>
+                <p>O "Condomel – Abelhas da Mata" é uma iniciativa revolucionária que propõe a criação de pequenos "condomínios" de abelhas nativas e sem ferrão, distribuídos estrategicamente pela cidade. Atualmente, cerca de <span class="highlight">80 mil abelhas</span> habitam os 15 condomínios instalados, formando uma rede vital para a manutenção da biodiversidade local.</p>
+                <p>Cada condomínio é cuidadosamente projetado para oferecer o habitat ideal para diferentes espécies de abelhas, garantindo sua proliferação e bem-estar. Esta abordagem inovadora não apenas protege as abelhas, mas também cria um laboratório vivo para pesquisas e educação ambiental.</p>
+            </div>
+            <div class="card fade-in">
+                <h3><i class="fas fa-leaf icon"></i>Impacto Ecológico</h3>
+                <p>As abelhas desempenham um papel crucial na reprodução de plantas e na manutenção da diversidade de espécies vegetais. Estima-se que <span class="highlight">mais de 75% das culturas alimentares globais</span> dependem, em algum grau, da polinização realizada por insetos, principalmente abelhas.</p>
+                <p>O Projeto Condomel contribui significativamente para a preservação da biodiversidade local, garantindo a polinização de espécies nativas e cultivadas. Isso não apenas mantém o equilíbrio ecológico, mas também assegura a produção de alimentos e a saúde dos ecossistemas urbanos e rurais de Ribeirão Pires.</p>
+            </div>
+            <div class="card fade-in">
+                <h3><i class="fas fa-graduation-cap icon"></i>Educação Ambiental</h3>
+                <p>Além dos benefícios ecológicos diretos, o projeto Condomel desempenha um papel fundamental na educação ambiental da comunidade. Através de parcerias com escolas e organizações locais, o projeto oferece:</p>
+                <ul>
+                    <li>Visitas guiadas aos condomínios de abelhas</li>
+                    <li>Workshops sobre a importância das abelhas e da polinização</li>
+                    <li>Programas de sensibilização sobre a conservação da biodiversidade</li>
+                    <li>Oportunidades de participação em pesquisas científicas cidadãs</li>
+                </ul>
+                <p>Estas iniciativas educacionais não apenas informam, mas também inspiram a próxima geração de defensores do meio ambiente, criando uma comunidade mais consciente e engajada na preservação da natureza.</p>
+            </div>
+        </div>
+        
+        <section class="card fade-in">
+            <h3><i class="fas fa-map-marked-alt icon"></i>Mapa dos Condomeis: Uma Rede de Vida</h3>
+            <p>Explore o mapa interativo abaixo para descobrir a localização dos 15 condomínios de abelhas espalhados por Ribeirão Pires. Cada ponto representa um oásis de biodiversidade, contribuindo para a saúde ecológica de nossa cidade.</p>
+            <div id="map"></div>
+        </section>
+        
+        <section class="card fade-in" style="margin-top: 4rem;">
+    <h3><i class="fas fa-list-ul icon"></i>Pontos do Circuito das Abelhas: Uma Jornada de Descobertas</h3>
+    <p>Cada ponto do Circuito das Abelhas é uma oportunidade única de aprendizado e conexão com a natureza. Descubra a localização de cada condomínio e planeje sua visita para uma experiência enriquecedora.</p>
+    <ul class="pontos-lista" id="pontos-lista"></ul>
+</section>
+
+<section class="pepta-section fade-in">
+    <h3><i class="fas fa-graduation-cap icon"></i>PEPTA: Programa de Educação Patrimonial, Turística e Ambiental</h3>
+    <p>O PEPTA é uma iniciativa inovadora que une esforços do Patrimônio Cultural, Turismo e Meio Ambiente para proporcionar uma experiência pedagógica única aos estudantes de Ribeirão Pires.</p>
+    
+    <div class="pepta-highlights">
+        <div class="highlight-item">
+            <i class="fas fa-tree icon"></i>
+            <h4>Educação Ambiental</h4>
+            <p>Lei 5.303/2009</p>
+        </div>
+        <div class="highlight-item">
+            <i class="fas fa-city icon"></i>
+            <h4>Plano Diretor</h4>
+            <p>Lei Municipal 5.907/2014</p>
+        </div>
+        <div class="highlight-item">
+            <i class="fas fa-landmark icon"></i>
+            <h4>Patrimônio Cultural e Natural</h4>
+            <p>Lei Municipal 6.227/2018</p>
+        </div>
+        <div class="highlight-item">
+            <i class="fas fa-suitcase icon"></i>
+            <h4>Turismo Educativo</h4>
+            <p>Lei Municipal 6.422/2019</p>
+        </div>
+    </div>
+
+    <p class="pepta-quote">"Professores, vocês são nossos maiores aliados nesta missão de educar e inspirar!"</p>
+
+    <p>O PEPTA está alinhado com a Agenda 2030 da ONU, promovendo educação de qualidade e desenvolvimento sustentável.</p>
+
+    <a href="https://turismoribeiraopires.com.br/pepta/" class="pepta-button">
+        <i class="fas fa-calendar-alt icon"></i>Agende sua Visita ao PEPTA
+    </a>
+</section>
+
+<section class="card fade-in" style="margin-top: 4rem;">
+    <h3><i class="fas fa-hands-helping icon"></i>Como Você Pode Ajudar</h3>
+    <p>A preservação das abelhas é uma responsabilidade coletiva. Aqui estão algumas maneiras pelas quais você pode contribuir:</p>
+    <ul>
+        <li>Plante flores nativas em seu jardim ou varanda</li>
+        <li>Evite o uso de pesticidas e herbicidas</li>
+        <li>Participe de programas de educação ambiental</li>
+        <li>Spread the word: compartilhe informações sobre a importância das abelhas</li>
+        <li>Apoie iniciativas locais de conservação</li>
+    </ul>
+</section>
+</main>
+
+<div class="scroll-to-top" id="scrollToTop">
+<i class="fas fa-chevron-up"></i>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

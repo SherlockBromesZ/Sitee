@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade - Projeto Condomel Ribeirão Pires</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar (mesma da página principal) -->
+    <nav class="navbar">
+        <!-- ... conteúdo da navbar ... -->
+    </nav>
+
+    <main class="community-page">
+        <section class="hero fade-in">
+            <h1>Comunidade Condomel</h1>
+            <p class="subtitle">Compartilhe Suas Descobertas Apícolas</p>
+        </section>
+
+        <section class="auth-section fade-in">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Registrar</button>
+                </div>
+                <div class="auth-content">
+                    <form id="login-form" class="auth-form active">
+                        <h2>Login</h2>
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Senha" required>
+                        <button type="submit">Entrar</button>
+                    </form>
+                    <form id="register-form" class="auth-form">
+                        <h2>Registrar</h2>
+                        <input type="text" placeholder="Nome" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Senha" required>
+                        <input type="password" placeholder="Confirmar Senha" required>
+                        <button type="submit">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- O resto do conteúdo da página permanece o mesmo -->
+        
+    </main>
+
+    <footer>
+        <!-- ... conteúdo do footer ... -->
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>
