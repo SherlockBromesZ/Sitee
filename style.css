@@ -62,15 +62,36 @@ body {
 }
 body.high-contrast {
     background-color: #000;
+    --primary-color: #050505;
+    --secondary-color: #000000;
+    --accent-color: #000000;
     color: #fff;
 }
 
 body.high-contrast .card,
+body.high-contrast .card h3,
 body.high-contrast .hero,
+body.high-contrast .hero h2,
 body.high-contrast .content,
-body.high-contrast .pepta-section {
+body.high-contrast .pepta-section,
+body.high-contrast .pepta-section h3{
     background-color: #333;
     color: #fff;
+}
+
+body.high-contrast .section-title{
+    color: #FFFFFF;
+}
+
+body.high-contrast .highlight-item,
+body.high-contrast .pepta-quote,
+body.high-contrast .quote{
+    background-color: #000;
+    color: white;
+}
+
+body.high-contrast button {
+    background: black;
 }
 
 
