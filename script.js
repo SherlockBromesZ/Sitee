@@ -37,7 +37,7 @@ const markers = pontos.map(ponto =>
 );
 
 const pontosList = document.getElementById('pontos-lista');
-const maxVisibleItems = 4; // Número de itens que serão visíveis inicialmente
+const maxVisibleItems = 4; 
 
 pontos.forEach((ponto, index) => {
     const li = document.createElement('li');
@@ -64,9 +64,9 @@ verMaisBtn.addEventListener('click', function() {
     hiddenItems.forEach((item, index) => {
         setTimeout(() => {
             item.classList.add('show');
-        }, index * 100); // Adiciona um pequeno atraso para cada item
+        }, index * 100); 
     });
-    this.style.display = 'none'; // Esconder o botão após clicar
+    this.style.display = 'none'; 
 });
 
 pontosList.parentNode.appendChild(verMaisBtn);
@@ -117,7 +117,6 @@ mobileMenu.addEventListener('click', function() {
     navbarMenu.classList.toggle('active');
 });
 
-// Fecha o menu ao clicar em um link
 document.querySelectorAll('.navbar-menu a').forEach(item => {
     item.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
@@ -125,3 +124,56 @@ document.querySelectorAll('.navbar-menu a').forEach(item => {
     });
 });
 
+let currentFontSize = 100;
+const minFontSize = 80;
+const maxFontSize = 150;
+
+function changeFontSize(direction) {
+  if (direction === 'increase' && currentFontSize < maxFontSize) {
+    currentFontSize += 10;
+  } else if (direction === 'decrease' && currentFontSize > minFontSize) {
+    currentFontSize -= 10;
+  }
+  document.body.style.fontSize = currentFontSize + '%';
+}
+
+const highContrastButton = document.getElementById('high-contrast');
+let isHighContrast = false;
+
+function toggleHighContrast() {
+    isHighContrast = !isHighContrast;
+    document.body.classList.toggle('high-contrast', isHighContrast);
+    
+    const navbar = document.querySelector('.navbar');
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    
+    if (isHighContrast) {
+        navbar.style.backgroundColor = '#000';
+        scrollToTopButton.style.backgroundColor = '#000';
+    } else {
+        navbar.style.backgroundColor = '';
+        scrollToTopButton.style.backgroundColor = '';
+    }
+}
+
+highContrastButton.addEventListener('click', toggleHighContrast);
+
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    
+    if (window.pageYOffset > 100) {
+        navbar.classList.add('fixed');
+        scrollToTopButton.style.display = 'block';
+    } else {
+        navbar.classList.remove('fixed');
+        scrollToTopButton.style.display = 'none';
+    }
+});
+
+  
+  document.getElementById('increase-font').addEventListener('click', () => changeFontSize('increase'));
+  document.getElementById('decrease-font').addEventListener('click', () => changeFontSize('decrease'));
+  document.getElementById('high-contrast').addEventListener('click', toggleHighContrast);
+  document.getElementById('color-blind').addEventListener('click', toggleColorBlindOptions);
+  
