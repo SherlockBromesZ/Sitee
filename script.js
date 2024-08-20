@@ -175,5 +175,3 @@ window.addEventListener('scroll', () => {
   document.getElementById('increase-font').addEventListener('click', () => changeFontSize('increase'));
   document.getElementById('decrease-font').addEventListener('click', () => changeFontSize('decrease'));
   document.getElementById('high-contrast').addEventListener('click', toggleHighContrast);
-  document.getElementById('color-blind').addEventListener('click', toggleColorBlindOptions);
-  

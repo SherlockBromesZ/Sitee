@@ -140,25 +140,25 @@
 </div>
 <script src="script.js"></script>
 <script>
-    // Inicialize o VLibras Widget
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
 
-    const vlibrasButton = document.getElementById('vlibras-widget-button');
-
-    vlibrasButton.addEventListener('click', () => {
-        if (window.VLibras && window.VLibras.Widget) {
-            const widget = window.VLibras.Widget;
-            if (typeof widget.togglePlugin === 'function') {
-                widget.togglePlugin();
-            } else {
-                console.error('A função togglePlugin não está disponível.');
-                alert('A função togglePlugin não está disponível. Por favor, recarregue a página e tente novamente.');
-            }
-        } else {
-            console.error('VLibras não está disponível');
-            alert('O VLibras não está carregado corretamente. Por favor, recarregue a página e tente novamente.');
+        const vlibrasButton = document.querySelector('[vw-access-button]');
+        if (vlibrasButton) {
+            vlibrasButton.addEventListener('click', () => {
+                if (window.VLibras && window.VLibras.Widget) {
+                    const widget = window.VLibras.Widget;
+                    if (typeof widget.togglePlugin === 'function') {
+                        widget.togglePlugin();
+                    } else {
+                        console.error('A função togglePlugin não está disponível.');
+                        alert('A função togglePlugin não está disponível. Por favor, recarregue a página e tente novamente.');
+                    }
+                } else {
+                    console.error('VLibras não está disponível');
+                    alert('O VLibras não está carregado corretamente. Por favor, recarregue a página e tente novamente.');
+                }
+            });
         }
-    });
 </script>
 </body>
 </html>
